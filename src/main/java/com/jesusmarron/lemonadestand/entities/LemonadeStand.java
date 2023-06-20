@@ -1,11 +1,16 @@
 package com.jesusmarron.lemonadestand.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.List;
 
 @Entity
+@NoArgsConstructor
+@Getter
+@Setter
 public class LemonadeStand {
     @Id
     @GeneratedValue
@@ -13,4 +18,7 @@ public class LemonadeStand {
 
     @Column(nullable = false)
     private String name;
+
+    @OneToMany
+    private List<Order> orders;
 }
