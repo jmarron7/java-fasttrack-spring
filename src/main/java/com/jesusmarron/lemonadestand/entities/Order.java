@@ -1,17 +1,15 @@
 package com.jesusmarron.lemonadestand.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.List;
 
 @Table(name="order_table")
 @Entity
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 public class Order {
     @Id
     @GeneratedValue
