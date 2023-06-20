@@ -21,6 +21,6 @@ public class Customer {
     @Column(nullable = false)
     private String phoneNumber;
 
-    @OneToMany
-    private List<Order> orders;
+    @OneToMany(mappedBy = "customer")
+    private List<Order> order;
 }

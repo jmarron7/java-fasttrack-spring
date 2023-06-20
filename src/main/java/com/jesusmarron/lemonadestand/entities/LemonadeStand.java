@@ -19,6 +19,6 @@ public class LemonadeStand {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "lemonadeStand")
     private List<Order> orders;
 }

@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.util.List;
 
+@Table(name="order_table")
 @Entity
 @NoArgsConstructor
 @Getter
@@ -19,12 +20,14 @@ public class Order {
     @Column(nullable = false)
     private double total;
 
-    @OneToMany
+    @OneToMany(mappedBy = "order")
     private List<Lemonade> lemonades;
 
     @ManyToOne
+    @JoinColumn
     private Customer customer;
 
     @ManyToOne
+    @JoinColumn
     private LemonadeStand lemonadeStand;
 }
