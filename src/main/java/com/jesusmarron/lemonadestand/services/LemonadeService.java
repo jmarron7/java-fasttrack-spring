@@ -1,11 +1,13 @@
 package com.jesusmarron.lemonadestand.services;
 
 import com.jesusmarron.lemonadestand.entities.Lemonade;
+import com.jesusmarron.lemonadestand.models.LemonadeRequestDto;
+import com.jesusmarron.lemonadestand.models.LemonadeResponseDto;
 
 import java.util.List;
 
 public interface LemonadeService {
-    List<Lemonade> getAllLemonades();
+    List<LemonadeResponseDto> getAllLemonades();
 
-    Lemonade createLemonade(Lemonade lemonade);
+    LemonadeResponseDto createLemonade(LemonadeRequestDto lemonadeRequestDto);
 }
