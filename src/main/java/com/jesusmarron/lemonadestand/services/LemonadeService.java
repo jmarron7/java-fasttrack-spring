@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface LemonadeService {
     List<Lemonade> getAllLemonades();
+
+    Lemonade createLemonade(Lemonade lemonade);
 }

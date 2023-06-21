@@ -18,4 +18,11 @@ public class LemonadeServiceImpl implements LemonadeService {
     public List<Lemonade> getAllLemonades() {
         return lemonadeRepository.findAll();
     }
+
+    @Override
+    public Lemonade createLemonade(Lemonade lemonade) {
+        lemonade.setId(null);
+        lemonade.setPrice(lemonade.getLemonJuice() * 0.20 + lemonade.getWater() * 0.10 + lemonade.getSugar() * 0.15 + lemonade.getIceCubes() * 0.05 + 0.50);
+        return lemonadeRepository.saveAndFlush(lemonade);
+    }
 }
