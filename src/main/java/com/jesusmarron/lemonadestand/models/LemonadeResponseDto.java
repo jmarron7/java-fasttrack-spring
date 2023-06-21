@@ -13,4 +13,12 @@ public class LemonadeResponseDto {
 
     private double price;
 
+    private double lemonJuice;
+
+    private double water;
+
+    private double sugar;
+
+    private int iceCubes;
+
 }
