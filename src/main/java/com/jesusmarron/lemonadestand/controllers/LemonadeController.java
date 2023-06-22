@@ -5,6 +5,7 @@ import com.jesusmarron.lemonadestand.models.LemonadeRequestDto;
 import com.jesusmarron.lemonadestand.models.LemonadeResponseDto;
 import com.jesusmarron.lemonadestand.services.LemonadeService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,5 +25,10 @@ public class LemonadeController {
     @PostMapping
     public LemonadeResponseDto createLemonade(@RequestBody LemonadeRequestDto lemonadeRequestDto) {
         return lemonadeService.createLemonade(lemonadeRequestDto);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<LemonadeResponseDto> getLemonadeById(@PathVariable Long id) {
+        return LemonadeService.getLemonadeById(id);
     }
 }
